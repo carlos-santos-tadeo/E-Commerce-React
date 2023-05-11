@@ -66,7 +66,7 @@ const ProductDetail = ({ productId }) => {
   return (
     <>
 
-      <section className='flex gap-2 items-center '>
+      <section className='flex gap-2 items-center mt-32'>
         <Link to="/">Home</Link>
         <div className='h-[8px] aspect-square bg-red-500 rounded-full'></div>
         <span className='font-bold'>{productData?.title}</span>

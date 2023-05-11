@@ -59,9 +59,9 @@ const Home = () => {
             categories.map(category => <li className='cursor-pointer text-slate-500 border-b-[1px] border-red-300 rounded-md hover:text-red-400' onClick={handleClickCategory} data-category={category.id} key={category.id}>{category.name}</li>)
           }
         </ul>
-        <div className='lg:pr-16 lg:grid lg:grid-rows-2 gap-3'>
-          <input className='rounded-md lg:w-[230px] text-center text-xl shadow-sm shadow-red-500/50' id='productName' type="text" placeholder='What are you looking for?' />
-          <button className="bg-red-400 rounded-md w-10 h-5 mx-auto"><i className='bx bx-search'></i></button>
+        <div className='lg:pr-16 lg:grid lg:grid-rows-2 lg:gap-3'>
+          <input className='rounded-md mr-5 lg:w-[230px] text-center text-xl shadow-sm shadow-red-500/50' id='productName' type="text" placeholder='What are you looking for?' />
+          <button className="bg-red-400 rounded-md w-14 h-7 mx-auto"><i className='bx bx-search font-semibold text-lg text-white'></i></button>
         </div>
       </form>
 

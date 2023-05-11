@@ -22,11 +22,13 @@ const Purchases = () => {
 
 
   return (
-    <main className='px-2 max-w-[1000px] mx-auto'>
+    <main className='bg-slate-200 mt-[70px] pb-10'>
+
+    <div className='px-2 max-w-[1000px] mx-auto'>
       <section className='flex gap-2 items-center my-2'>
         <Link to="/">Home</Link>
         <div className='h-[7px] aspect-square bg-red-500 rounded-full'></div>
-        <span className='font-bold'>Purchases</span>
+        <span className='font-bold cursor-pointer'>Purchases</span>
       </section>
 
       <section className='grid gap-16 py-6'>
@@ -34,6 +36,7 @@ const Purchases = () => {
           <PurchaseCard key={purchase.id} purchase={purchase} />
         ))}
       </section>
+    </div>
     </main>
   )
 }

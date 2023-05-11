@@ -21,11 +21,12 @@ const Login = () => {
   }
 
   return (
-    <main className='bg-gray-100 grid place-content-center px-2'>
+    <main className='bg-slate-200 grid place-content-center px-2 min-h-screen'>
       {
         token ? (
-          <section className='bg-white p-4 rounded-md max-w-[300px] text-center grid gap-4'>
-            <i className='bx bxs-user-circle text-6xl' ></i>
+          <section className='bg-white p-4 rounded-md w-[300px] h-[400px] text-center grid gap-4 font-bold'>
+            <i className='bx bxs-user-circle text-6xl py-3' ></i>
+            <h2>Welcome to your favorite store!</h2>
             <h3 className='capitalize'>{user?.firstName} {user?.lastName}</h3>
             <button onClick={handleClickLoggout} className='bg-red-500 text-white py-2 rounded-md block w-full'>Loggout</button>
           </section>
