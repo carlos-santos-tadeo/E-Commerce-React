@@ -51,21 +51,23 @@ const Home = () => {
 
 
   return (
-    <main className='px-2'>
-      <form onSubmit={handleSubmit}>
-        <div>
-          <input id='productName' type="text" placeholder='What are you looking for?' />
-          <button><i className='bx bx-search'></i></button>
-        </div>
-
-        <ul>
-          <li onClick={handleClickCategory} data-category={0}>ALL</li>
+    <main className='px-2 mt-32'>
+      <form className='lg:flex flex-col lg:flex-row lg:justify-between' onSubmit={handleSubmit}>
+        <ul className='flex gap-3 lg:gap-10 lg:text-2xl text-base font-bold mb-10 pl-2 lg:pl-[7%]'>
+          <li className='cursor-pointer text-slate-500 border-b-[1px] border-red-300 rounded-md hover:text-red-400' onClick={handleClickCategory} data-category={0}>ALL</li>
           {
-            categories.map(category => <li onClick={handleClickCategory} data-category={category.id} key={category.id}>{category.name}</li>)
+            categories.map(category => <li className='cursor-pointer text-slate-500 border-b-[1px] border-red-300 rounded-md hover:text-red-400' onClick={handleClickCategory} data-category={category.id} key={category.id}>{category.name}</li>)
           }
         </ul>
+        <div className='lg:pr-16 lg:grid lg:grid-rows-2 gap-3'>
+          <input className='rounded-md lg:w-[230px] text-center text-xl shadow-sm shadow-red-500/50' id='productName' type="text" placeholder='What are you looking for?' />
+          <button className="bg-red-400 rounded-md w-10 h-5 mx-auto"><i className='bx bx-search'></i></button>
+        </div>
       </form>
-      <section className='grid gap-8 py-6'>
+
+
+
+      <section className='grid pb-12 mt-10 justify-center gap-10 auto-rows-auto grid-cols-[repeat(auto-fill,_300px)] sm:grid-cols-[repeat(auto-fill,_350px)]'>
         {
           productByName.map(product => <ProductCard key={product.id} product={product} />)
         }

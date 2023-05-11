@@ -5,39 +5,42 @@ import { changeIsShowCart } from '../../store/slices/cart.slice'
 
 const Header = () => {
 
-  const {token} = useSelector((store) => store.userInfo)
+  const { token } = useSelector((store) => store.userInfo)
 
   const dispatch = useDispatch()
 
   const navigate = useNavigate()
 
- const handleClickChangeShowCart = () => {
-  if(!token) return navigate("/login")
-  dispatch(changeIsShowCart())
- }
+  const handleClickChangeShowCart = () => {
+    if (!token) return navigate("/login")
+    dispatch(changeIsShowCart())
+  }
 
   return (
-    <section className='grid grid-cols-2 h-[50px]'>
-      {/* nombre */}
+    <main className='fixed bg-white z-50 w-full text-2xl text-gray-400'>
+
+      <section className='h-[70px] grid grid-cols-2'>
+        {/* nombre */}
 
 
-      <Link className='border-[1px] border-r-0' to="/">
-        <h1>e-commerce</h1>
-      </Link>
-
-      {/* enlace a rutas */}
-      <nav className='grid grid-cols-[1fr_1fr_1fr] border-[1px]'>
-        <Link to="/login">
-          <i className='bx bx-user'></i>
+        <Link className='border-[1px] h-[70px] border-r-0 flex items-center group hover:bg-red-400 duration-500 ' to="/">
+          <h1 className='sm:pl-20 pl-10 group-hover:text-white font-bold text-xl sm:text-3xl text-[#f85555]'>e-commerce</h1>
         </Link>
-        <Link className='border-x-[1px]' to="/purchases">
-          <i className='bx bx-box'></i>
-        </Link>
-        <button onClick={handleClickChangeShowCart}>
-          <i className='bx bx-cart'></i>
-        </button>
-      </nav>
-    </section>
+
+        {/* enlace a rutas */}
+        <nav className=' grid grid-cols-[1fr_1fr_1fr] border-[1px] h-[70px] items-center text-center'>
+          <Link className='group hover:animate-bounce hover:text-red-400' to="/login">
+            <i className='bx bx-user group hover:text-red-400 sm:text-3xl'></i>
+          </Link>
+          <Link className='border-x-[1px] group hover:animate-bounce hover:text-red-400' to="/purchases">
+            <i className='bx bx-box group hover:text-red-400 sm:text-3xl'></i>
+          </Link>
+          <button className='group hover:animate-bounce hover:text-red-400' onClick={handleClickChangeShowCart}>
+            <i className='bx bx-cart group hover:text-red-400 sm:text-3xl'></i>
+          </button>
+        </nav>
+      </section>
+    </main>
   )
 }
 

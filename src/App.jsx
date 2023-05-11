@@ -16,7 +16,7 @@ function App() {
     //en routes las rutas protegidas
     //lo que no representa una ruta es un componente
     //NotFound la pagina que se mostrara cuando se busque una ruta que no existe
-    <section className='grid grid-rows-[auto_1fr] min-h-screen font-["Yantramanav"]'>
+    <section className='grid grid-rows-[auto_1fr] min-h-screen font-["Yantramanav"] bg-white'>
 
       <Header />
 
