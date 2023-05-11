@@ -39,7 +39,7 @@ const Header = () => {
             <i className='bx bx-box group hover:text-red-400 sm:text-3xl'></i>
           </Link>
           <button className='relative hover:animate-bounce hover:text-red-400' onClick={handleClickChangeShowCart}>
-            <i className='bx bx-cart group hover:text-red-400 sm:text-3xl'><div className='md:text-sm text-white md:font-bold bg-red-400 md:w-5 rounded-full text-sm w-3 absolute right-[5%] bottom-[25%] md:bottom-[20%] md:right-[35%]'>{productsInCart? productsInCart : ""}</div></i>
+            <i className='bx bx-cart group hover:text-red-400 sm:text-3xl'><div className='md:text-sm text-white md:font-bold bg-red-400 md:w-5 rounded-full text-sm w-3 absolute right-[5%] bottom-[25%] md:bottom-[20%] md:right-[35%]'>{products.length > 0 ? products.length : ""}</div></i>
 
           </button>
         </nav>
