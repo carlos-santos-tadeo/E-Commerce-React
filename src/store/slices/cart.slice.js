@@ -1,5 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { axiosEcommerce, getConfig } from "../../utils/configAxios";
+import Swal from "sweetalert2";
 
 const initialState = {
   products: [],
@@ -34,7 +35,7 @@ export const getCartProducts = () => (dispatch) => {
 export const addProductCart = (data) => (dispatch) => {
     axiosEcommerce.post("cart", data, getConfig())
     .then(() => dispatch(getCartProducts()))
-    .catch((err) => console.log(err))
+    .catch((err) => addProductAlert())
 
 }
 
@@ -49,6 +50,13 @@ export const purchaseCart = () => (dispatch) => {
   axiosEcommerce.post("/purchases", {}, getConfig())
     .then(() => dispatch(getCartProducts()))
     .catch((err) => console.log(err))
+}
+
+const addProductAlert = () => {
+  Swal.fire({
+    title: "The product was already in the cart",
+    icon: 'warning',
+  })
 }
 
 export default cartSlice.reducer

@@ -4,7 +4,7 @@ import store from '../../store'
 import { changeIsShowCart, getCartProducts, purchaseCart } from '../../store/slices/cart.slice'
 import Products from '../../pages/Products'
 import CartProduct from './CartProduct'
-
+import Swal from 'sweetalert2'
 
 const Cart = () => {
 
@@ -23,7 +23,7 @@ const Cart = () => {
   const totalPrice = products.reduce((acc, curr) => acc + (curr.quantity * curr.product.price), 0)
 
   const handleClickCheckout = () => {
-    dispatch(purchaseCart())
+    alertConfirmPurchase()
   }
 
   useEffect(() => {
@@ -31,6 +31,26 @@ const Cart = () => {
       dispatch(getCartProducts())
     }
   }, [isShowCart])
+
+  const alertConfirmPurchase = () => {
+     Swal.fire({
+      title: 'Are you sure to make your purchase?',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#d33',
+      cancelButtonColor: '#6BA9B8',
+      confirmButtonText: 'Confirmar',
+      cancelButtonText: 'Cancelar'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        dispatch(purchaseCart())
+        Swal.fire({
+          title: "Thanks for your purchase",
+          icon: 'success',
+        })
+      }
+    });
+  };
 
   // min-h-[calc(100vh_-_60px)]
   return (

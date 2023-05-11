@@ -2,6 +2,7 @@ import React from 'react'
 import { useDispatch } from 'react-redux'
 import { Link } from 'react-router-dom'
 import { addProductCart } from '../../store/slices/cart.slice'
+import Swal from 'sweetalert2'
 
 const ProductCard = ({ product }) => {
 
@@ -11,7 +12,16 @@ const ProductCard = ({ product }) => {
     //si tienes un padre que puede afectar con esto se quita e.stopPropagation
     e.preventDefault()
     dispatch(addProductCart({quantity: 1, productId: product.id}))
+    addProductAlert()
   }
+
+  const addProductAlert = () => {
+    Swal.fire({
+      title: "Added product",
+      icon: 'success',
+    })
+  }
+
 
   return (
     <Link to={`/products/${product.id}`} className='border-[1px] border-gray-300 rounded-md'>

@@ -4,7 +4,7 @@ import SimilarProducts from './SimilarProducts'
 import { Link } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import { addProductCart } from '../../store/slices/cart.slice'
-
+import Swal from 'sweetalert2'
 const stylePositionImages = {
   "0": "-ml-[0%]",
   "1": "-ml-[100%]",
@@ -35,6 +35,7 @@ const ProductDetail = ({ productId }) => {
 
   const handleClickAddToCart = () => {
     dispatch(addProductCart({ quantity: counter, productId: productData.id }))
+    addProductAlert()
   }
 
   const nextImage = () => {
@@ -62,6 +63,13 @@ const ProductDetail = ({ productId }) => {
       .then((res) => setProductData(res.data))
       .catch((err => console.log(err)))
   }, [productId])
+
+  const addProductAlert = () => {
+    Swal.fire({
+      title: "Added product",
+      icon: 'success',
+    })
+  }
 
   return (
     <>

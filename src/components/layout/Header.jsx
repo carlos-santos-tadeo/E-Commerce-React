@@ -8,8 +8,6 @@ const Header = () => {
   const { token } = useSelector((store) => store.userInfo)
   const { products } = useSelector(store => store.cart)
 
-  let productsInCart = products.length
-
   const dispatch = useDispatch()
 
   const navigate = useNavigate()
