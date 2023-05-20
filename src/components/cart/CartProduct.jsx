@@ -22,11 +22,11 @@ const CartProduct = ({ product }) => {
 
         <i onClick={handleClickDelete} className='bx bxs-trash text-red-500 cursor-pointer'></i>
         
-        <div className='felx items-center'>
+        {/* <div className='felx items-center'>
           <button className='border-[1px] p-2 px-2 hover:bg-red-500 hover:text-white transition-colors'>-</button>
           <span className='border-[1px] p-2 px-4 border-x-0'>{product.quantity}</span>
           <button className='border-[1px] p-2 px-2 hover:bg-red-500 hover:text-white transition-colors'>+</button>
-        </div>
+        </div> */}
       </section>
       <h4 className='mt-2 text-end'>Total: <span className='font-bold'>${(product.quantity * product.product.price).toFixed(1)}</span></h4>
     </article>
