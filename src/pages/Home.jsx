@@ -53,7 +53,7 @@ const Home = () => {
   return (
     <main className='px-2 mt-32'>
       <form className='lg:flex flex-col lg:flex-row lg:justify-between' onSubmit={handleSubmit}>
-        <ul className='flex gap-3 lg:gap-10 lg:text-2xl text-base font-bold mb-10 pl-2 lg:pl-[7%]'>
+        <ul className='flex gap-[9px] lg:gap-10 lg:text-2xl text-sm font-bold mb-10 pl-2 lg:pl-[7%]'>
           <li className='cursor-pointer text-slate-500 border-b-[1px] border-red-300 rounded-md hover:text-red-400' onClick={handleClickCategory} data-category={0}>ALL</li>
           {
             categories.map(category => <li className='cursor-pointer text-slate-500 border-b-[1px] border-red-300 rounded-md hover:text-red-400' onClick={handleClickCategory} data-category={category.id} key={category.id}>{category.name}</li>)

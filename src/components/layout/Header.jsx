@@ -30,14 +30,14 @@ const Header = () => {
 
         {/* enlace a rutas */}
         <nav className=' grid grid-cols-[1fr_1fr_1fr] border-[1px] h-[70px] items-center text-center'>
-          <Link className='group hover:animate-bounce hover:text-red-400' to="/login">
-            <i className='bx bx-user group hover:text-red-400 sm:text-3xl'></i>
+          <Link className=' hover:text-red-400' to="/login">
+            <i className='bx bx-user  hover:text-red-400 sm:text-3xl'></i>
           </Link>
-          <Link className='border-x-[1px] group hover:animate-bounce hover:text-red-400' to="/purchases">
-            <i className='bx bx-box group hover:text-red-400 sm:text-3xl'></i>
+          <Link className='border-x-[1px]  hover:text-red-400' to="/purchases">
+            <i className='bx bx-box  hover:text-red-400 sm:text-3xl'></i>
           </Link>
-          <button className='relative hover:animate-bounce hover:text-red-400' onClick={handleClickChangeShowCart}>
-            <i className='bx bx-cart group hover:text-red-400 sm:text-3xl'><div className='md:text-sm text-white md:font-bold bg-red-400 md:w-5 rounded-full text-sm w-3 absolute right-[5%] bottom-[25%] md:bottom-[20%] md:right-[35%]'>{products.length > 0 ? products.length : ""}</div></i>
+          <button className='relative hover:text-red-400' onClick={handleClickChangeShowCart}>
+            <i className='bx bx-cart  hover:text-red-400 sm:text-3xl'><div className='md:text-sm text-white md:font-bold bg-red-400 md:w-5 rounded-full text-sm w-3 absolute right-[5%] bottom-[25%] md:bottom-[20%] md:right-[35%]'>{products.length > 0 ? products.length : ""}</div></i>
 
           </button>
         </nav>

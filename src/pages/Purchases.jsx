@@ -22,7 +22,7 @@ const Purchases = () => {
 
 
   return (
-    <main className='bg-slate-200 mt-[70px] pb-10'>
+    <main className=' mt-[70px] pb-10'>
 
     <div className='px-2 max-w-[1000px] mx-auto'>
       <section className='flex gap-2 items-center my-2'>
